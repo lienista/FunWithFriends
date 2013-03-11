@@ -81,7 +81,7 @@
  
  @return the relation for the users belonging to this role.
  */
-- (PFRelation *)users;
+@property (nonatomic, readonly, retain) PFRelation *users;
 
 /*!
  Gets the PFRelation for the PFRoles that are direct children of this role.
@@ -91,7 +91,7 @@
  
  @return the relation for the roles belonging to this role.
  */
-- (PFRelation *)roles;
+@property (nonatomic, readonly, retain) PFRelation *roles;
 
 #pragma mark -
 #pragma mark Querying for Roles

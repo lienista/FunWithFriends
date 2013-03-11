@@ -29,11 +29,13 @@
 		C451218615C88994005E733A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C451218215C88994005E733A /* StoreKit.framework */; };
 		C451218C15C88BAD005E733A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C451218B15C88BAD005E733A /* CoreLocation.framework */; };
 		C451219415C89727005E733A /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C451219315C89727005E733A /* MasterViewController.m */; };
-		C494802015ED5D6E00507216 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C494801F15ED5D6E00507216 /* libsqlite3.dylib */; };
 		C4A09FC215ED4BA000E98CC0 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C4A09FC015ED4BA000E98CC0 /* Icon.png */; };
 		C4A09FC315ED4BA000E98CC0 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4A09FC115ED4BA000E98CC0 /* Icon@2x.png */; };
 		C4C1A26C15CB2DBE0067E7EA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4C1A26A15CB2DAB0067E7EA /* MapKit.framework */; };
 		C4C1A26F15CB30A90067E7EA /* GeoPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C1A26E15CB30A80067E7EA /* GeoPointAnnotation.m */; };
+		C4DDA8A416EE583000B5C174 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4DDA8A116EE583000B5C174 /* Default-568h@2x.png */; };
+		C4DDA8A516EE583000B5C174 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C4DDA8A216EE583000B5C174 /* Default.png */; };
+		C4DDA8A616EE583000B5C174 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4DDA8A316EE583000B5C174 /* Default@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,9 @@
 		C4C1A26A15CB2DAB0067E7EA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C4C1A26D15CB30A80067E7EA /* GeoPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoPointAnnotation.h; sourceTree = "<group>"; };
 		C4C1A26E15CB30A80067E7EA /* GeoPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoPointAnnotation.m; sourceTree = "<group>"; };
+		C4DDA8A116EE583000B5C174 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		C4DDA8A216EE583000B5C174 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		C4DDA8A316EE583000B5C174 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +86,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C494802015ED5D6E00507216 /* libsqlite3.dylib in Frameworks */,
 				C4C1A26C15CB2DBE0067E7EA /* MapKit.framework in Frameworks */,
 				C451218315C88994005E733A /* libz.dylib in Frameworks */,
 				C451218C15C88BAD005E733A /* CoreLocation.framework in Frameworks */,
@@ -179,6 +183,9 @@
 		C451219115C8968A005E733A /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				C4DDA8A116EE583000B5C174 /* Default-568h@2x.png */,
+				C4DDA8A216EE583000B5C174 /* Default.png */,
+				C4DDA8A316EE583000B5C174 /* Default@2x.png */,
 				C4A09FC015ED4BA000E98CC0 /* Icon.png */,
 				C4A09FC115ED4BA000E98CC0 /* Icon@2x.png */,
 			);
@@ -240,6 +247,9 @@
 				C451216415C885E3005E733A /* MainStoryboard.storyboard in Resources */,
 				C4A09FC215ED4BA000E98CC0 /* Icon.png in Resources */,
 				C4A09FC315ED4BA000E98CC0 /* Icon@2x.png in Resources */,
+				C4DDA8A416EE583000B5C174 /* Default-568h@2x.png in Resources */,
+				C4DDA8A516EE583000B5C174 /* Default.png in Resources */,
+				C4DDA8A616EE583000B5C174 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

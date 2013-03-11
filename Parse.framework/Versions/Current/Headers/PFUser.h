@@ -2,8 +2,8 @@
 // Copyright 2011 Parse, Inc. All rights reserved.
 
 #import <Foundation/Foundation.h>
+#import "PFConstants.h"
 #import "PFObject.h"
-#import "PF_Facebook.h"
 
 @class PFQuery;
 
@@ -17,11 +17,7 @@ A Parse Framework User Object that is a local representation of a user persisted
  */
 
 
-@interface PFUser : PFObject {
-    NSString *password;
-    NSString *sessionToken;
-    BOOL isNew;
-}
+@interface PFUser : PFObject
 
 /** @name Accessing the Current User */
 
@@ -34,7 +30,7 @@ A Parse Framework User Object that is a local representation of a user persisted
 /// The session token for the PFUser. This is set by the server upon successful authentication.
 @property (nonatomic, retain) NSString *sessionToken;
 
-/// Whether the PFUser was just created from a request. This is only set after a Facebook login.
+/// Whether the PFUser was just created from a request. This is only set after a Facebook or Twitter login.
 @property (readonly, assign) BOOL isNew;
 
 /*!

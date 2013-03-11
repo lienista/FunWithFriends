@@ -3,7 +3,7 @@
 //  Geolocations
 //
 //  Created by Héctor Ramos on 7/31/12.
-//  Copyright (c) 2012 Parse, Inc. All rights reserved.
+//  Copyright (c) 2013 Parse, Inc. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -12,12 +12,15 @@
 
 @implementation AppDelegate
 
+
+#pragma mark - UIApplicationDelegate
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // ****************************************************************************
     // Parse initialization
     // [Parse setApplicationId:@"APPLICATION_ID" clientKey:@"CLIENT_KEY"];
     // ****************************************************************************
-    
+
     // Override point for customization after application launch.
     return YES;
 }

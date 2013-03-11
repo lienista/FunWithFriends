@@ -3,7 +3,7 @@
 //  Geolocations
 //
 //  Created by Héctor Ramos on 7/31/12.
-//  Copyright (c) 2012 Parse, Inc. All rights reserved.
+//  Copyright (c) 2013 Parse, Inc. All rights reserved.
 //
 
 // PFQueryTableViewController UIStoryboard Template
@@ -30,52 +30,26 @@
     self.navigationItem.leftBarButtonItem.enabled = NO;
     self.navigationItem.rightBarButtonItem.enabled = NO;
 
-    if (![CLLocationManager locationServicesEnabled]) {
-        
-    }
-
-    [[self locationManager] startUpdatingLocation];
+    [self.locationManager startUpdatingLocation];
     
     // Listen for annotation updates. Triggers a refresh whenever an annotation is dragged and dropped.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadObjects) name:@"geoPointAnnotiationUpdated" object:nil];
 }
 
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-}
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait || UIInterfaceOrientationIsLandscape(interfaceOrientation));
+    return interfaceOrientation == UIInterfaceOrientationPortrait;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+    if ([segue.identifier isEqualToString:@"showDetail"]) {
         // Row selection
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         PFObject *object = [self.objects objectAtIndex:indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
-    } else if ([[segue identifier] isEqualToString:@"showSearch"]) {
+        [segue.destinationViewController setDetailItem:object];
+    } else if ([segue.identifier isEqualToString:@"showSearch"]) {
         // Search button
-        [[segue destinationViewController] setInitialLocation:[self locationManager].location];
+        [segue.destinationViewController setInitialLocation:self.locationManager.location];
     }
 }
 
@@ -125,23 +99,23 @@
     static NSDateFormatter *dateFormatter = nil;
 	if (dateFormatter == nil) {
 		dateFormatter = [[NSDateFormatter alloc] init];
-		[dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
-		[dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+        dateFormatter.timeStyle = NSDateFormatterMediumStyle;
+        dateFormatter.dateStyle = NSDateFormatterMediumStyle;
 	}
     
 	static NSNumberFormatter *numberFormatter = nil;
 	if (numberFormatter == nil) {
 		numberFormatter = [[NSNumberFormatter alloc] init];
-		[numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
-		[numberFormatter setMaximumFractionDigits:3];
+        numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
+        numberFormatter.maximumFractionDigits = 3;
 	}
 
     PFTableViewCell *cell = (PFTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"LocationCell"];
     
     // Configure the cell
-    PFGeoPoint *geoPoint = [object objectForKey:@"location"];
+    PFGeoPoint *geoPoint = object[@"location"];
     
-	cell.textLabel.text = [dateFormatter stringFromDate:[object updatedAt]];
+	cell.textLabel.text = [dateFormatter stringFromDate:object.updatedAt];
     
     NSString *string = [NSString stringWithFormat:@"%@, %@",
 						[numberFormatter stringFromNumber:[NSNumber numberWithDouble:geoPoint.latitude]],
@@ -248,16 +222,16 @@
 	}
 	
 	_locationManager = [[CLLocationManager alloc] init];
-	[_locationManager setDesiredAccuracy:kCLLocationAccuracyNearestTenMeters];
-	[_locationManager setDelegate:self];
-    [_locationManager setPurpose:@"Your current location is used to demonstrate PFGeoPoint and Geo Queries."];
+    _locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+    _locationManager.delegate = self;
+    _locationManager.purpose = @"Your current location is used to demonstrate PFGeoPoint and Geo Queries.";
 	
 	return _locationManager;
 }
 
 - (IBAction)insertCurrentLocation:(id)sender {
 	// If it's not possible to get a location, then return.
-	CLLocation *location = _locationManager.location;
+	CLLocation *location = self.locationManager.location;
 	if (!location) {
 		return;
 	}

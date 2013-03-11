@@ -12,6 +12,8 @@
 
 /*!
  PFPurchase provides a set of APIs for working with in-app purchases.
+
+ This class is currently for iOS only.
  */
 @interface PFPurchase : NSObject
 

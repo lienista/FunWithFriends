@@ -6,9 +6,24 @@
 @class PFUser;
 
 // Version
-#define PARSE_VERSION @"1.1.0"
+#define PARSE_VERSION @"1.1.33"
 
 extern NSInteger const PARSE_API_VERSION;
+
+// Platform
+#define PARSE_IOS_ONLY (TARGET_OS_IPHONE)
+#define PARSE_OSX_ONLY (TARGET_OS_MAC && !(TARGET_OS_IPHONE))
+
+extern NSString *const kPFDeviceType;
+
+#if PARSE_IOS_ONLY
+#import <UIKit/UIKit.h>
+#else
+#import <Cocoa/Cocoa.h>
+@compatibility_alias UIImage NSImage;
+@compatibility_alias UIColor NSColor;
+@compatibility_alias UIView NSView;
+#endif
 
 // Server
 extern NSString *const kPFParseServer;
@@ -76,6 +91,10 @@ extern NSInteger const kPFErrorDuplicateValue;
 extern NSInteger const kPFErrorInvalidRoleName;
 /*! @abstract 140: Exceeded an application quota.  Upgrade to resolve. */
 extern NSInteger const kPFErrorExceededQuota;
+/*! @abstract 141: Cloud Code script had an error. */
+extern NSInteger const kPFScriptError;
+/*! @abstract 142: Cloud Code validation failed. */
+extern NSInteger const kPFValidationError;
 /*! @abstract 143: Product purchase receipt is missing */
 extern NSInteger const kPFErrorReceiptMissing;
 /*! @abstract 144: Product purchase receipt is invalid */
@@ -94,6 +113,8 @@ extern NSInteger const kPFErrorProductDownloadFileSystemFailure;
 extern NSInteger const kPFErrorInvalidImageData;
 /*! @abstract 151: Unsaved file. */
 extern NSInteger const kPFErrorUnsavedFile;
+/*! @abstract 153: Fail to delete file. */
+extern NSInteger const kPFErrorFileDeleteFailure;
 
 /*! @abstract 200: Username is missing or empty */
 extern NSInteger const kPFErrorUsernameMissing;

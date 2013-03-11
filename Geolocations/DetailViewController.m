@@ -3,7 +3,7 @@
 //  Geolocations
 //
 //  Created by Héctor Ramos on 7/31/12.
-//  Copyright (c) 2012 Parse, Inc. All rights reserved.
+//  Copyright (c) 2013 Parse, Inc. All rights reserved.
 //
 
 #import <MapKit/MapKit.h>
@@ -13,8 +13,7 @@
 #import "GeoPointAnnotation.h"
 
 @implementation DetailViewController
-@synthesize detailItem = _detailItem;
-@synthesize mapView = _mapView;
+
 
 #pragma mark - UIViewController
 
@@ -23,10 +22,10 @@
     
     if (self.detailItem) {
         // obtain the geopoint
-        PFGeoPoint *geoPoint = [self.detailItem objectForKey:@"location"];
+        PFGeoPoint *geoPoint = self.detailItem[@"location"];
         
         // center our map view around this geopoint
-        [self.mapView setRegion:MKCoordinateRegionMake(CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude), MKCoordinateSpanMake(0.01, 0.01))];
+        self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude), MKCoordinateSpanMake(0.01f, 0.01f));
         
         // add the annotation
         GeoPointAnnotation *annotation = [[GeoPointAnnotation alloc] initWithObject:self.detailItem];
@@ -35,7 +34,7 @@
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    return (interfaceOrientation == UIInterfaceOrientationMaskPortrait);
 }
 
 

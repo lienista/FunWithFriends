@@ -9,9 +9,8 @@
 /*!
   A class that defines a query that is used to query for PFObjects.
  */
-@class PFOperation;
 @interface PFQuery : NSObject {
-    PFOperation *currentOperation;
+    NSOperation *cancellationToken;
     
     NSString *className;
     NSMutableDictionary *where;
@@ -21,9 +20,6 @@
     NSString *order;
     PFCachePolicy cachePolicy;
     BOOL trace;
-    NSDate *queryStart;
-    NSDate *querySent;
-    NSDate *queryReceived;
 }
 
 #pragma mark Query options
@@ -36,6 +32,26 @@
  @return A PFQuery object.
  */
 + (PFQuery *)queryWithClassName:(NSString *)className;
+
+/*!
+ Creates a PFQuery with the constraints given by predicate.
+ 
+ The following types of predicates are supported:
+ * Simple comparisons such as =, !=, <, >, <=, >=, and BETWEEN with a key and a constant.
+ * Containment predicates, such as "x IN {1, 2, 3}".
+ * Key-existence predicates, such as "x IN SELF".
+ * BEGINSWITH expressions.
+ * Compound predicates with AND, OR, and NOT.
+ * SubQueries with "key IN %@", subquery.
+ 
+ The following types of predicates are NOT supported:
+ * Aggregate operations, such as ANY, SOME, ALL, or NONE.
+ * Regular expressions, such as LIKE, MATCHES, CONTAINS, or ENDSWITH.
+ * Predicates comparing one key to another.
+ * Complex predicates with many ORed clauses.
+ 
+ */
++ (PFQuery *)queryWithClassName:(NSString *)className predicate:(NSPredicate *)predicate;
 
 /*!
  Initializes the query with a class name.
@@ -125,6 +141,13 @@
  @param array The list of values the key's object should not be.
  */
 - (void)whereKey:(NSString *)key notContainedIn:(NSArray *)array;
+
+/*!
+ Add a constraint to the query that requires a particular key's array contains every element of the provided array.
+ @param arrayKey The key to be constrained.
+ @param array The array of values to search for.
+ */
+- (void)whereKey:(NSString *)key containsAllObjectsInArray:(NSArray *)array;
 
 /** @name Adding Location Constraints */
 
@@ -238,6 +261,15 @@
 - (void)whereKey:(NSString *)key matchesKey:(NSString *)otherKey inQuery:(PFQuery *)query;
 
 /*!
+ Adds a constraint that requires that a key's value NOT match a value in another key
+ in objects returned by a sub query.
+ @param key The key that the value is stored
+ @param otherKey The key in objects in the returned by the sub query whose value should match
+ @param query The query to run.
+ */
+- (void)whereKey:(NSString *)key doesNotMatchKey:(NSString *)otherKey inQuery:(PFQuery *)query;
+
+/*!
  Add a constraint that requires that a key's value matches a PFQuery constraint.
  This only works where the key's values are PFObjects or arrays of PFObjects.
  @param key The key that the value is stored in
@@ -252,6 +284,7 @@
  @param query The query the value should not match
  */
 - (void)whereKey:(NSString *)key doesNotMatchQuery:(PFQuery *)query;
+
 #pragma mark -
 #pragma mark Sorting
 
@@ -281,6 +314,18 @@
  @param key The key to order bye
  */
 - (void)addDescendingOrder:(NSString *)key;
+
+/*!
+ Sort the results in descending order with the given descriptor.
+ @param sortDescriptor The NSSortDescriptor to order by.
+ */
+- (void)orderBySortDescriptor:(NSSortDescriptor *)sortDescriptor;
+
+/*!
+ Sort the results in descending order with the given descriptors.
+ @param sortDescriptors An NSArray of NSSortDescriptor instances to order by.
+ */
+- (void)orderBySortDescriptors:(NSArray *)sortDescriptors;
 
 #pragma mark -
 #pragma mark Get methods
@@ -490,7 +535,10 @@
 
 /** @name Paginating Results */
 /*!
- A limit on the number of objects to return.  Note: If you are calling findObject with limit=1, you may find it easier to use getFirst instead.
+ A limit on the number of objects to return. The default limit is 100, with a
+ maximum of 1000 results being returned at a time.
+
+ Note: If you are calling findObject with limit=1, you may find it easier to use getFirst instead.
  */
 @property (nonatomic) NSInteger limit;
 
@@ -530,7 +578,7 @@
  */
 + (void)clearAllCachedResults; 
 
-#pragma mark -
+#pragma mark - Advanced Settings
 
 /** @name Advanced Settings */
 

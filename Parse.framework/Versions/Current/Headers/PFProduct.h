@@ -14,6 +14,8 @@
  By default, products can only be created via the data browser; saving a PFProduct
  will result in error. However, the products' metadata information can be queried 
  and viewed.
+
+ This class is currently for iOS only.
  */
 @interface PFProduct : PFObject
 

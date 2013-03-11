@@ -17,8 +17,16 @@
 
  The preferred way of modifying or retrieving channel subscriptions is to use
  the PFInstallation class, instead of the class methods in PFPush.
+
+ This class is currently for iOS only. Parse does not handle Push Notifications
+ to Parse applications running on OS X. Push Notifications can be sent from OS X
+ applications via Cloud Code or the REST API to push-enabled devices (e.g. iOS
+ or Android).
  */
 @interface PFPush : NSObject
+
+/*! @name Creating a Push Notification */
++ (PFPush *)push;
 
 /*! @name Configuring a Push Notification */
 
@@ -145,6 +153,38 @@
                                     selector:(SEL)selector;
 
 /*!
+ Send a push message to a query.
+ @param query The query to send to. The query must be a PFInstallation query
+ created with [PFInstallation query].
+ @param message The message to send.
+ @param error Pointer to an NSError that will be set if necessary.
+ @result Returns whether the send succeeded.
+ */
++ (BOOL)sendPushMessageToQuery:(PFQuery *)query
+                   withMessage:(NSString *)message
+                         error:(NSError **)error;
+
+/*!
+ Asynchronously send a push message to a query.
+ @param query The query to send to. The query must be a PFInstallation query
+ created with [PFInstallation query].
+ @param message The message to send.
+ */
++ (void)sendPushMessageToQueryInBackground:(PFQuery *)query
+                               withMessage:(NSString *)message;
+
+/*!
+ Asynchronously sends a push message to a query and calls the given block.
+ @param query The query to send to. The query must be a PFInstallation query
+ created with [PFInstallation query].
+ @param message The message to send.
+ @param block The block to execute. The block should have the following argument signature: (BOOL succeeded, NSError *error)
+ */
++ (void)sendPushMessageToQueryInBackground:(PFQuery *)query
+                               withMessage:(NSString *)message
+                                     block:(PFBooleanResultBlock)block;
+
+/*!
  Send this push message.
  @param error Pointer to an NSError that will be set if necessary.
  @result Returns whether the send succeeded.
@@ -213,6 +253,38 @@
                                  withData:(NSDictionary *)data
                                    target:(id)target
                                  selector:(SEL)selector;
+
+/*!
+ Send a push message with arbitrary data to a query. See the guide for information about the dictionary structure.
+ @param query The query to send to. The query must be a PFInstallation query
+ created with [PFInstallation query].
+ @param data The data to send.
+ @param error Pointer to an NSError that will be set if necessary.
+ @result Returns whether the send succeeded.
+ */
++ (BOOL)sendPushDataToQuery:(PFQuery *)query
+                   withData:(NSDictionary *)data
+                      error:(NSError **)error;
+
+/*!
+ Asynchronously send a push message with arbitrary data to a query. See the guide for information about the dictionary structure.
+ @param query The query to send to. The query must be a PFInstallation query
+ created with [PFInstallation query].
+ @param data The data to send.
+ */
++ (void)sendPushDataToQueryInBackground:(PFQuery *)query
+                               withData:(NSDictionary *)data;
+
+/*!
+ Asynchronously sends a push message with arbitrary data to a query and calls the given block. See the guide for information about the dictionary structure.
+ @param query The query to send to. The query must be a PFInstallation query
+ created with [PFInstallation query].
+ @param data The data to send.
+ @param block The block to execute. The block should have the following argument signature: (BOOL succeeded, NSError *error)
+ */
++ (void)sendPushDataToQueryInBackground:(PFQuery *)query
+                               withData:(NSDictionary *)data
+                                  block:(PFBooleanResultBlock)block;
 
 /*! @name Handling Notifications */
 

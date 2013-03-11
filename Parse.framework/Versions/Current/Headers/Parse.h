@@ -9,27 +9,39 @@
 #import <Foundation/Foundation.h>
 #import "PFACL.h"
 #import "PFAnonymousUtils.h"
+#import "PFCloud.h"
 #import "PFConstants.h"
-#import "PFFacebookUtils.h"
 #import "PFFile.h"
 #import "PFGeoPoint.h"
-#import "PFImageView.h"
-#import "PFLogInViewController.h"
 #import "PFObject.h"
-#import "PFProduct.h"
-#import "PFProductTableViewController.h"
-#import "PFPush.h"
-#import "PFPurchase.h"
 #import "PFQuery.h"
-#import "PFQueryTableViewController.h"
-#import "PFInstallation.h"
 #import "PFRelation.h"
 #import "PFRole.h"
+#import "PFUser.h"
+
+#if PARSE_IOS_ONLY
+#import "PFImageView.h"
+#import "PFInstallation.h"
+#import "PFLogInViewController.h"
+#import "PFProduct.h"
+#import "PFProductTableViewController.h"
+#import "PFPurchase.h"
+#import "PFPush.h"
+#import "PFQueryTableViewController.h"
 #import "PFSignUpViewController.h"
 #import "PFTableViewCell.h"
 #import "PFTwitterUtils.h"
-#import "PFUser.h"
-#import "PF_FBConnect.h"
+
+#if defined(__has_include)
+#if __has_include(<FacebookSDK/FacebookSDK.h>)
+#import <FacebookSDK/FacebookSDK.h>
+#import "PFFacebookUtils.h"
+#else
+#define PFFacebookUtils Please_add_the_Facebook_SDK_to_your_project
+#endif
+#endif
+
+#endif
 
 @interface Parse : NSObject
 
@@ -41,21 +53,10 @@
  @param applicationId The client key for your Parse application.
  */
 + (void)setApplicationId:(NSString *)applicationId clientKey:(NSString *)clientKey;
++ (NSString *)getApplicationId;
++ (NSString *)getClientKey;
 
-/** @name Configuring Facebook Settings */
-
-/*!
- Sets the Facebook application id that you are using with your Parse application. You must set this in
- order to use the Facebook functionality in Parse.
- @param applicationId The Facebook application id that you are using with your Parse application.
- */
-+ (void)setFacebookApplicationId:(NSString *)applicationId __attribute__ ((deprecated));
-
-/*!
- Whether the Facebook application id has been set.
- */
-+ (BOOL)hasFacebookApplicationId __attribute__ ((deprecated));
-
+#if PARSE_IOS_ONLY
 /** @name Configuring UI Settings */
 
 /*!
@@ -71,9 +72,6 @@
  @param enabled Whether a UIAlert should be shown when a Parse error occurs.
  */
 + (void)errorMessagesEnabled:(BOOL)enabled;
-
-+ (NSString *)getApplicationId;
-+ (NSString *)getClientKey;
-+ (NSString *)getFacebookApplicationId __attribute__ ((deprecated));
+#endif
 
 @end

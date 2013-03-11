@@ -3,7 +3,7 @@
 //  Geolocations
 //
 //  Created by Héctor Ramos on 8/16/12.
-//  Copyright (c) 2012 Parse, Inc. All rights reserved.
+//  Copyright (c) 2013 Parse, Inc. All rights reserved.
 //
 
 #import "CircleOverlay.h"
@@ -13,7 +13,7 @@
 @synthesize coordinate = _coordinate;
 
 
-#pragma mark - NSObject
+#pragma mark - Initialization
 
 - (id)initWithCoordinate:(CLLocationCoordinate2D)aCoordinate radius:(CLLocationDistance)aRadius {
     self = [super init];

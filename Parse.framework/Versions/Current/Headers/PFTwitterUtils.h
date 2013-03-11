@@ -10,6 +10,8 @@
 
 /*!
  Provides utility functions for working with Twitter in a Parse application.
+
+ This class is currently for iOS only.
  */
 @interface PFTwitterUtils : NSObject
 

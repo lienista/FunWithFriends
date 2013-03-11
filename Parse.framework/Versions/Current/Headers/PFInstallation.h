@@ -26,25 +26,13 @@
 
  PFInstallation objects which have a valid deviceToken and are saved to
  the Parse cloud can be used to target push notifications.
+
+ This class is currently for iOS only. There is no PFInstallation for Parse
+ applications running on OS X, because they cannot receive push notifications.
  */
 
 @interface PFInstallation : PFObject {
 }
-
-/** @name Accessing the Current Installation */
-
-/*!
- Gets the currently-running installation from disk and returns an instance of
- it. If this installation is not stored on disk, returns a PFInstallation
- with deviceType and installationId fields set to those of the
- current installation, and a deviceToken field set to the value stored by
- [PFPush storeDeviceToken:]. In the latter case, if this installation matches
- one in the Parse cloud, then calling save will fill in this installation's
- objectId instead of creating a new installation.
- @result Returns a PFInstallation that represents the currently-running
- installation.
- */
-+ (PFInstallation *)currentInstallation;
 
 /** @name Targeting Installations */
 
@@ -55,6 +43,25 @@
  */
 + (PFQuery *)query;
 
+/** @name Accessing the Current Installation */
+
+/*!
+ Gets the currently-running installation from disk and returns an instance of
+ it. If this installation is not stored on disk, returns a PFInstallation
+ with deviceType and installationId fields set to those of the
+ current installation.
+ @result Returns a PFInstallation that represents the currently-running
+ installation.
+ */
++ (PFInstallation *)currentInstallation;
+
+/*!
+ Sets the device token string property from an NSData-encoded token.
+ */
+- (void)setDeviceTokenFromData:(NSData *)deviceTokenData;
+
+/** @name Properties */
+
 /// The device type for the PFInstallation.
 @property (nonatomic, readonly, retain) NSString *deviceType;
 
@@ -62,7 +69,7 @@
 @property (nonatomic, readonly, retain) NSString *installationId;
 
 /// The device token for the PFInstallation.
-@property (nonatomic, readonly, retain) NSString *deviceToken;
+@property (nonatomic, retain) NSString *deviceToken;
 
 /// The badge for the PFInstallation.
 @property (nonatomic, assign) NSInteger badge;

@@ -3,7 +3,7 @@
 //  Geolocations
 //
 //  Created by Héctor Ramos on 8/16/12.
-//  Copyright (c) 2012 Parse, Inc. All rights reserved.
+//  Copyright (c) 2013 Parse, Inc. All rights reserved.
 //
 
 #import <Parse/Parse.h>
@@ -25,11 +25,6 @@ enum PinAnnotationTypeTag {
 @end
 
 @implementation SearchViewController
-@synthesize location = _location;
-@synthesize radius = _radius;
-@synthesize targetOverlay = _targetOverlay;
-@synthesize mapView = _mapView;
-@synthesize slider = _slider;
 
 
 #pragma mark - UIViewController
@@ -37,7 +32,7 @@ enum PinAnnotationTypeTag {
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.mapView setRegion:MKCoordinateRegionMake(self.location.coordinate, MKCoordinateSpanMake(0.05, 0.05))];
+    self.mapView.region = MKCoordinateRegionMake(self.location.coordinate, MKCoordinateSpanMake(0.05f, 0.05f));
     [self configureOverlay];
 }
 
@@ -125,7 +120,7 @@ enum PinAnnotationTypeTag {
     }
     
     if (MKAnnotationViewDragStateStarting == newState) {
-        [self.mapView removeOverlays:[self.mapView overlays]];
+        [self.mapView removeOverlays:self.mapView.overlays];
     } else if (MKAnnotationViewDragStateNone == newState && MKAnnotationViewDragStateEnding == oldState) {
         MKPinAnnotationView *pinAnnotationView = (MKPinAnnotationView *)view;
         GeoQueryAnnotation *geoQueryAnnotation = (GeoQueryAnnotation *)pinAnnotationView.annotation;
@@ -133,6 +128,7 @@ enum PinAnnotationTypeTag {
         [self configureOverlay];
     }
 }
+
 
 #pragma mark - SearchViewController
 
@@ -165,8 +161,8 @@ enum PinAnnotationTypeTag {
 
 - (void)configureOverlay {
     if (self.location) {
-        [self.mapView removeAnnotations:[self.mapView annotations]];        
-        [self.mapView removeOverlays:[self.mapView overlays]];
+        [self.mapView removeAnnotations:self.mapView.annotations];
+        [self.mapView removeOverlays:self.mapView.overlays];
         
         CircleOverlay *overlay = [[CircleOverlay alloc] initWithCoordinate:self.location.coordinate radius:self.radius];
         [self.mapView addOverlay:overlay];
