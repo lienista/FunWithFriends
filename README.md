@@ -1,4 +1,4 @@
-# Geolocations
+# FunWithFriends
 
 A sample app based on Apple's [Locations sample app][locations]. Showcases [`PFQueryTableViewController`][pfqtvc], [`PFGeoPoint`][pfgeopoint], and the use of [`UIStoryboard`][storyboard].
 
