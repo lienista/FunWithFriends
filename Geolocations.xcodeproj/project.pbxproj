@@ -16,7 +16,6 @@
 		C451215B15C885E3005E733A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C451215915C885E3005E733A /* InfoPlist.strings */; };
 		C451215D15C885E3005E733A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C451215C15C885E3005E733A /* main.m */; };
 		C451216115C885E3005E733A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C451216015C885E3005E733A /* AppDelegate.m */; };
-		C451216415C885E3005E733A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C451216215C885E3005E733A /* MainStoryboard.storyboard */; };
 		C451216A15C885E3005E733A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C451216915C885E3005E733A /* DetailViewController.m */; };
 		C451217515C88862005E733A /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C451217415C88862005E733A /* Parse.framework */; };
 		C451217A15C8896D005E733A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C451217715C8896D005E733A /* AudioToolbox.framework */; };
@@ -36,6 +35,24 @@
 		C4DDA8A416EE583000B5C174 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4DDA8A116EE583000B5C174 /* Default-568h@2x.png */; };
 		C4DDA8A516EE583000B5C174 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C4DDA8A216EE583000B5C174 /* Default.png */; };
 		C4DDA8A616EE583000B5C174 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4DDA8A316EE583000B5C174 /* Default@2x.png */; };
+		FC0CB26B18B8708300AE7957 /* Exit.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CB25D18B8708300AE7957 /* Exit.png */; };
+		FC0CB26C18B8708300AE7957 /* ExitDown.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CB25E18B8708300AE7957 /* ExitDown.png */; };
+		FC0CB26D18B8708300AE7957 /* Facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CB25F18B8708300AE7957 /* Facebook.png */; };
+		FC0CB26E18B8708300AE7957 /* FacebookDown.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CB26018B8708300AE7957 /* FacebookDown.png */; };
+		FC0CB26F18B8708300AE7957 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CB26118B8708300AE7957 /* Icon.png */; };
+		FC0CB27018B8708300AE7957 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CB26218B8708300AE7957 /* Icon@2x.png */; };
+		FC0CB27118B8708300AE7957 /* LoginFieldBG.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CB26318B8708300AE7957 /* LoginFieldBG.png */; };
+		FC0CB27218B8708300AE7957 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CB26418B8708300AE7957 /* Logo.png */; };
+		FC0CB27318B8708300AE7957 /* MainBG.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CB26518B8708300AE7957 /* MainBG.png */; };
+		FC0CB27418B8708300AE7957 /* SignUp.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CB26618B8708300AE7957 /* SignUp.png */; };
+		FC0CB27518B8708300AE7957 /* SignUpDown.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CB26718B8708300AE7957 /* SignUpDown.png */; };
+		FC0CB27618B8708300AE7957 /* SignUpFieldBG.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CB26818B8708300AE7957 /* SignUpFieldBG.png */; };
+		FC0CB27718B8708300AE7957 /* Twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CB26918B8708300AE7957 /* Twitter.png */; };
+		FC0CB27818B8708300AE7957 /* TwitterDown.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0CB26A18B8708300AE7957 /* TwitterDown.png */; };
+		FC82447C18B8576000241DF5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC82447B18B8576000241DF5 /* MainStoryboard.storyboard */; };
+		FC82447F18B858CF00241DF5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82447E18B858CF00241DF5 /* LoginViewController.m */; };
+		FC82448218B858F500241DF5 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82448118B858F500241DF5 /* SignUpViewController.m */; };
+		FC82448518B8639A00241DF5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82448418B8639A00241DF5 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +72,6 @@
 		C451215E15C885E3005E733A /* Geolocations-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Geolocations-Prefix.pch"; sourceTree = "<group>"; };
 		C451215F15C885E3005E733A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C451216015C885E3005E733A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C451216315C885E3005E733A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		C451216815C885E3005E733A /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		C451216915C885E3005E733A /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		C451217415C88862005E733A /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -79,6 +95,27 @@
 		C4DDA8A116EE583000B5C174 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C4DDA8A216EE583000B5C174 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		C4DDA8A316EE583000B5C174 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		FC0CB25D18B8708300AE7957 /* Exit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Exit.png; sourceTree = "<group>"; };
+		FC0CB25E18B8708300AE7957 /* ExitDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ExitDown.png; sourceTree = "<group>"; };
+		FC0CB25F18B8708300AE7957 /* Facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Facebook.png; sourceTree = "<group>"; };
+		FC0CB26018B8708300AE7957 /* FacebookDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FacebookDown.png; sourceTree = "<group>"; };
+		FC0CB26118B8708300AE7957 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		FC0CB26218B8708300AE7957 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		FC0CB26318B8708300AE7957 /* LoginFieldBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginFieldBG.png; sourceTree = "<group>"; };
+		FC0CB26418B8708300AE7957 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		FC0CB26518B8708300AE7957 /* MainBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainBG.png; sourceTree = "<group>"; };
+		FC0CB26618B8708300AE7957 /* SignUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignUp.png; sourceTree = "<group>"; };
+		FC0CB26718B8708300AE7957 /* SignUpDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignUpDown.png; sourceTree = "<group>"; };
+		FC0CB26818B8708300AE7957 /* SignUpFieldBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignUpFieldBG.png; sourceTree = "<group>"; };
+		FC0CB26918B8708300AE7957 /* Twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Twitter.png; sourceTree = "<group>"; };
+		FC0CB26A18B8708300AE7957 /* TwitterDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TwitterDown.png; sourceTree = "<group>"; };
+		FC82447B18B8576000241DF5 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		FC82447D18B858CF00241DF5 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		FC82447E18B858CF00241DF5 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		FC82448018B858F500241DF5 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		FC82448118B858F500241DF5 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		FC82448318B8639A00241DF5 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FC82448418B8639A00241DF5 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +187,7 @@
 			children = (
 				C451215F15C885E3005E733A /* AppDelegate.h */,
 				C451216015C885E3005E733A /* AppDelegate.m */,
-				C451216215C885E3005E733A /* MainStoryboard.storyboard */,
+				FC82447B18B8576000241DF5 /* MainStoryboard.storyboard */,
 				C451219215C89727005E733A /* MasterViewController.h */,
 				C451219315C89727005E733A /* MasterViewController.m */,
 				C451216815C885E3005E733A /* DetailViewController.h */,
@@ -163,6 +200,12 @@
 				C4370E4F15DECC3100ED6B24 /* GeoQueryAnnotation.m */,
 				C4370E4B15DDD17B00ED6B24 /* CircleOverlay.h */,
 				C4370E4C15DDD17B00ED6B24 /* CircleOverlay.m */,
+				FC82448318B8639A00241DF5 /* ViewController.h */,
+				FC82448418B8639A00241DF5 /* ViewController.m */,
+				FC82447D18B858CF00241DF5 /* LoginViewController.h */,
+				FC82447E18B858CF00241DF5 /* LoginViewController.m */,
+				FC82448018B858F500241DF5 /* SignUpViewController.h */,
+				FC82448118B858F500241DF5 /* SignUpViewController.m */,
 				C451219115C8968A005E733A /* Assets */,
 				C451215715C885E3005E733A /* Supporting Files */,
 			);
@@ -183,6 +226,20 @@
 		C451219115C8968A005E733A /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				FC0CB25D18B8708300AE7957 /* Exit.png */,
+				FC0CB25E18B8708300AE7957 /* ExitDown.png */,
+				FC0CB25F18B8708300AE7957 /* Facebook.png */,
+				FC0CB26018B8708300AE7957 /* FacebookDown.png */,
+				FC0CB26118B8708300AE7957 /* Icon.png */,
+				FC0CB26218B8708300AE7957 /* Icon@2x.png */,
+				FC0CB26318B8708300AE7957 /* LoginFieldBG.png */,
+				FC0CB26418B8708300AE7957 /* Logo.png */,
+				FC0CB26518B8708300AE7957 /* MainBG.png */,
+				FC0CB26618B8708300AE7957 /* SignUp.png */,
+				FC0CB26718B8708300AE7957 /* SignUpDown.png */,
+				FC0CB26818B8708300AE7957 /* SignUpFieldBG.png */,
+				FC0CB26918B8708300AE7957 /* Twitter.png */,
+				FC0CB26A18B8708300AE7957 /* TwitterDown.png */,
 				C4DDA8A116EE583000B5C174 /* Default-568h@2x.png */,
 				C4DDA8A216EE583000B5C174 /* Default.png */,
 				C4DDA8A316EE583000B5C174 /* Default@2x.png */,
@@ -218,7 +275,7 @@
 		C451214315C885E3005E733A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Parse, Inc.";
 			};
 			buildConfigurationList = C451214615C885E3005E733A /* Build configuration list for PBXProject "Geolocations" */;
@@ -243,13 +300,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC0CB26F18B8708300AE7957 /* Icon.png in Resources */,
+				FC0CB27018B8708300AE7957 /* Icon@2x.png in Resources */,
+				FC0CB26C18B8708300AE7957 /* ExitDown.png in Resources */,
+				FC0CB26D18B8708300AE7957 /* Facebook.png in Resources */,
 				C451215B15C885E3005E733A /* InfoPlist.strings in Resources */,
-				C451216415C885E3005E733A /* MainStoryboard.storyboard in Resources */,
+				FC0CB27118B8708300AE7957 /* LoginFieldBG.png in Resources */,
+				FC0CB26E18B8708300AE7957 /* FacebookDown.png in Resources */,
 				C4A09FC215ED4BA000E98CC0 /* Icon.png in Resources */,
+				FC82447C18B8576000241DF5 /* MainStoryboard.storyboard in Resources */,
+				FC0CB27818B8708300AE7957 /* TwitterDown.png in Resources */,
 				C4A09FC315ED4BA000E98CC0 /* Icon@2x.png in Resources */,
 				C4DDA8A416EE583000B5C174 /* Default-568h@2x.png in Resources */,
+				FC0CB27318B8708300AE7957 /* MainBG.png in Resources */,
+				FC0CB26B18B8708300AE7957 /* Exit.png in Resources */,
+				FC0CB27718B8708300AE7957 /* Twitter.png in Resources */,
+				FC0CB27218B8708300AE7957 /* Logo.png in Resources */,
+				FC0CB27418B8708300AE7957 /* SignUp.png in Resources */,
 				C4DDA8A516EE583000B5C174 /* Default.png in Resources */,
 				C4DDA8A616EE583000B5C174 /* Default@2x.png in Resources */,
+				FC0CB27518B8708300AE7957 /* SignUpDown.png in Resources */,
+				FC0CB27618B8708300AE7957 /* SignUpFieldBG.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +336,9 @@
 				C451216A15C885E3005E733A /* DetailViewController.m in Sources */,
 				C451219415C89727005E733A /* MasterViewController.m in Sources */,
 				C4C1A26F15CB30A90067E7EA /* GeoPointAnnotation.m in Sources */,
+				FC82448518B8639A00241DF5 /* ViewController.m in Sources */,
+				FC82447F18B858CF00241DF5 /* LoginViewController.m in Sources */,
+				FC82448218B858F500241DF5 /* SignUpViewController.m in Sources */,
 				C4370E4915DDCE4C00ED6B24 /* SearchViewController.m in Sources */,
 				C4370E4D15DDD17B00ED6B24 /* CircleOverlay.m in Sources */,
 				C4370E5015DECC3100ED6B24 /* GeoQueryAnnotation.m in Sources */,
@@ -282,14 +356,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		C451216215C885E3005E733A /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C451216315C885E3005E733A /* en */,
-			);
-			name = MainStoryboard.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -297,9 +363,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -312,10 +382,14 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -324,16 +398,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
@@ -352,6 +433,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GeoLocations/GeoLocations-Prefix.pch";
 				INFOPLIST_FILE = "GeoLocations/GeoLocations-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = GeoLocations;
 				WRAPPER_EXTENSION = app;
 			};
@@ -368,6 +450,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GeoLocations/GeoLocations-Prefix.pch";
 				INFOPLIST_FILE = "GeoLocations/GeoLocations-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = GeoLocations;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;

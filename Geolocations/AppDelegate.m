@@ -17,7 +17,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // ****************************************************************************
     // Parse initialization
-    // [Parse setApplicationId:@"APPLICATION_ID" clientKey:@"CLIENT_KEY"];
+         [Parse setApplicationId:@"FbOYy3StrVkXh0NeAw1bF1WuXujVM0k7MHEiDNXG" clientKey:@"btphRZSgTf7pSSLDJOfrGDykaGFUF3NzTUDuGeuf"];
     // ****************************************************************************
 
     // Override point for customization after application launch.
@@ -29,18 +29,18 @@
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     
     // Stop updating locations while in the background.
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    MasterViewController *masterViewController = [storyboard instantiateViewControllerWithIdentifier:@"MasterViewController"];
-    [masterViewController.locationManager stopUpdatingLocation];
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+//    MasterViewController *masterViewController = [storyboard instantiateViewControllerWithIdentifier:@"MasterViewController"];
+//    [masterViewController.locationManager stopUpdatingLocation];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 
     // Start updating locations when the app returns to the foreground.
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    MasterViewController *masterViewController = [storyboard instantiateViewControllerWithIdentifier:@"MasterViewController"];
-    [masterViewController.locationManager startUpdatingLocation];
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+//    MasterViewController *masterViewController = [storyboard instantiateViewControllerWithIdentifier:@"MasterViewController"];
+//    [masterViewController.locationManager startUpdatingLocation];
 }
 
 @end
